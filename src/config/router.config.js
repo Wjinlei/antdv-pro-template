@@ -7,14 +7,14 @@ export const asyncRouterMap = [
     name: 'index',
     component: BasicLayout,
     meta: { title: 'menu.home' },
-    redirect: '/dashboard/workplace',
+    redirect: '/dashboard',
     children: [
       // dashboard
       {
-        path: '/dashboard/workplace',
-        name: 'Workplace',
-        component: () => import('@/views/dashboard/Workplace'),
-        meta: { title: 'menu.dashboard.workplace', keepAlive: true, permission: ['dashboard'] }
+        path: '/dashboard',
+        name: 'dashboard',
+        component: () => import('@/views/Home'),
+        meta: { title: 'menu.dashboard', keepAlive: true }
       }
     ]
   },
