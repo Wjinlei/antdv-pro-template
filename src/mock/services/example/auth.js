@@ -6,7 +6,7 @@ const username = ['admin', 'super']
 // '21232f297a57a5a743894a0e4a801fc3',
 const password = ['8914de686ab28dc22f30d3d8e107ff6c', '21232f297a57a5a743894a0e4a801fc3'] // admin, ant.design
 
-const login = (options) => {
+const login = options => {
   const body = getBody(options)
   console.log('mock: body', body)
   if (!username.includes(body.username) || !password.includes(body.password)) {
@@ -33,6 +33,7 @@ const login = (options) => {
     },
     '',
     200,
+    0,
     { 'Custom-Header': Mock.mock('@guid') }
   )
 }
