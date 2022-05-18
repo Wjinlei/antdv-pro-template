@@ -71,7 +71,7 @@ const asyncRouterMap = [
           {
             path: '/dashboard/analysis',
             name: 'Analysis',
-            component: () => import('@/views/dashboard/Analysis'),
+            component: () => import('@/views/example/dashboard/Analysis'),
             meta: {title: '分析页', permission: ['dashboard']}
           },
           {
@@ -84,7 +84,7 @@ const asyncRouterMap = [
           {
             path: '/dashboard/workplace',
             name: 'Workplace',
-            component: () => import('@/views/dashboard/Workplace'),
+            component: () => import('@/views/example/dashboard/Workplace'),
             meta: {title: '工作台', permission: ['dashboard']}
           }
         ]
@@ -101,14 +101,14 @@ const asyncRouterMap = [
           {
             path: '/result/success',
             name: 'ResultSuccess',
-            component: () => import(/* webpackChunkName: "result" */ '@/views/result/Success'),
+            component: () => import(/* webpackChunkName: "result" */ '@/views/example/result/Success'),
             // 该页面隐藏面包屑和页面标题栏
             meta: { title: '成功', hiddenHeaderContent: true, permission: [ 'result' ] }
           },
           {
             path: '/result/fail',
             name: 'ResultFail',
-            component: () => import(/* webpackChunkName: "result" */ '@/views/result/Error'),
+            component: () => import(/* webpackChunkName: "result" */ '@/views/example/result/Error'),
             // 该页面隐藏面包屑和页面标题栏
             meta: { title: '失败', hiddenHeaderContent: true, permission: [ 'result' ] }
           }

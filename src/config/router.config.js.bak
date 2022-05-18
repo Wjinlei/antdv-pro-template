@@ -26,7 +26,7 @@ export const asyncRouterMap = [
           {
             path: '/dashboard/analysis/:pageNo([1-9]\\d*)?',
             name: 'Analysis',
-            component: () => import('@/views/dashboard/Analysis'),
+            component: () => import('@/views/example/dashboard/Analysis'),
             meta: { title: 'menu.dashboard.analysis', keepAlive: false, permission: ['dashboard'] }
           },
           // 外部链接
@@ -38,7 +38,7 @@ export const asyncRouterMap = [
           {
             path: '/dashboard/workplace',
             name: 'Workplace',
-            component: () => import('@/views/dashboard/Workplace'),
+            component: () => import('@/views/example/dashboard/Workplace'),
             meta: { title: 'menu.dashboard.workplace', keepAlive: true, permission: ['dashboard'] }
           }
         ]
@@ -53,19 +53,19 @@ export const asyncRouterMap = [
           {
             path: '/form/base-form',
             name: 'BaseForm',
-            component: () => import('@/views/form/basicForm'),
+            component: () => import('@/views/example/form/basicForm'),
             meta: { title: 'menu.form.basic-form', keepAlive: true, permission: ['form'] }
           },
           {
             path: '/form/step-form',
             name: 'StepForm',
-            component: () => import('@/views/form/stepForm/StepForm'),
+            component: () => import('@/views/example/form/stepForm/StepForm'),
             meta: { title: 'menu.form.step-form', keepAlive: true, permission: ['form'] }
           },
           {
             path: '/form/advanced-form',
             name: 'AdvanceForm',
-            component: () => import('@/views/form/advancedForm/AdvancedForm'),
+            component: () => import('@/views/example/form/advancedForm/AdvancedForm'),
             meta: { title: 'menu.form.advanced-form', keepAlive: true, permission: ['form'] }
           }
         ]
@@ -82,44 +82,44 @@ export const asyncRouterMap = [
             path: '/list/table-list/:pageNo([1-9]\\d*)?',
             name: 'TableListWrapper',
             hideChildrenInMenu: true, // 强制显示 MenuItem 而不是 SubMenu
-            component: () => import('@/views/list/TableList'),
+            component: () => import('@/views/example/list/TableList'),
             meta: { title: 'menu.list.table-list', keepAlive: true, permission: ['table'] }
           },
           {
             path: '/list/basic-list',
             name: 'BasicList',
-            component: () => import('@/views/list/BasicList'),
+            component: () => import('@/views/example/list/BasicList'),
             meta: { title: 'menu.list.basic-list', keepAlive: true, permission: ['table'] }
           },
           {
             path: '/list/card',
             name: 'CardList',
-            component: () => import('@/views/list/CardList'),
+            component: () => import('@/views/example/list/CardList'),
             meta: { title: 'menu.list.card-list', keepAlive: true, permission: ['table'] }
           },
           {
             path: '/list/search',
             name: 'SearchList',
-            component: () => import('@/views/list/search/SearchLayout'),
+            component: () => import('@/views/example/list/search/SearchLayout'),
             redirect: '/list/search/article',
             meta: { title: 'menu.list.search-list', keepAlive: true, permission: ['table'] },
             children: [
               {
                 path: '/list/search/article',
                 name: 'SearchArticles',
-                component: () => import('../views/list/search/Article'),
+                component: () => import('../views/example/list/search/Article'),
                 meta: { title: 'menu.list.search-list.articles', permission: ['table'] }
               },
               {
                 path: '/list/search/project',
                 name: 'SearchProjects',
-                component: () => import('../views/list/search/Projects'),
+                component: () => import('../views/example/list/search/Projects'),
                 meta: { title: 'menu.list.search-list.projects', permission: ['table'] }
               },
               {
                 path: '/list/search/application',
                 name: 'SearchApplications',
-                component: () => import('../views/list/search/Applications'),
+                component: () => import('../views/example/list/search/Applications'),
                 meta: { title: 'menu.list.search-list.applications', permission: ['table'] }
               }
             ]
@@ -138,13 +138,13 @@ export const asyncRouterMap = [
           {
             path: '/profile/basic',
             name: 'ProfileBasic',
-            component: () => import('@/views/profile/basic'),
+            component: () => import('@/views/example/profile/basic'),
             meta: { title: 'menu.profile.basic', permission: ['profile'] }
           },
           {
             path: '/profile/advanced',
             name: 'ProfileAdvanced',
-            component: () => import('@/views/profile/advanced/Advanced'),
+            component: () => import('@/views/example/profile/advanced/Advanced'),
             meta: { title: 'menu.profile.advanced', permission: ['profile'] }
           }
         ]
@@ -161,13 +161,13 @@ export const asyncRouterMap = [
           {
             path: '/result/success',
             name: 'ResultSuccess',
-            component: () => import(/* webpackChunkName: "result" */ '@/views/result/Success'),
+            component: () => import(/* webpackChunkName: "result" */ '@/views/example/result/Success'),
             meta: { title: 'menu.result.success', keepAlive: false, hiddenHeaderContent: true, permission: ['result'] }
           },
           {
             path: '/result/fail',
             name: 'ResultFail',
-            component: () => import(/* webpackChunkName: "result" */ '@/views/result/Error'),
+            component: () => import(/* webpackChunkName: "result" */ '@/views/example/result/Error'),
             meta: { title: 'menu.result.fail', keepAlive: false, hiddenHeaderContent: true, permission: ['result'] }
           }
         ]
@@ -213,13 +213,13 @@ export const asyncRouterMap = [
           {
             path: '/account/center',
             name: 'center',
-            component: () => import('@/views/account/center'),
+            component: () => import('@/views/example/account/center'),
             meta: { title: 'menu.account.center', keepAlive: true, permission: ['user'] }
           },
           {
             path: '/account/settings',
             name: 'settings',
-            component: () => import('@/views/account/settings/Index'),
+            component: () => import('@/views/example/account/settings/Index'),
             meta: { title: 'menu.account.settings', hideHeader: true, permission: ['user'] },
             redirect: '/account/settings/basic',
             hideChildrenInMenu: true,
@@ -227,13 +227,13 @@ export const asyncRouterMap = [
               {
                 path: '/account/settings/basic',
                 name: 'BasicSettings',
-                component: () => import('@/views/account/settings/BasicSetting'),
+                component: () => import('@/views/example/account/settings/BasicSetting'),
                 meta: { title: 'account.settings.menuMap.basic', hidden: true, permission: ['user'] }
               },
               {
                 path: '/account/settings/security',
                 name: 'SecuritySettings',
-                component: () => import('@/views/account/settings/Security'),
+                component: () => import('@/views/example/account/settings/Security'),
                 meta: {
                   title: 'account.settings.menuMap.security',
                   hidden: true,
@@ -244,19 +244,19 @@ export const asyncRouterMap = [
               {
                 path: '/account/settings/custom',
                 name: 'CustomSettings',
-                component: () => import('@/views/account/settings/Custom'),
+                component: () => import('@/views/example/account/settings/Custom'),
                 meta: { title: 'account.settings.menuMap.custom', hidden: true, keepAlive: true, permission: ['user'] }
               },
               {
                 path: '/account/settings/binding',
                 name: 'BindingSettings',
-                component: () => import('@/views/account/settings/Binding'),
+                component: () => import('@/views/example/account/settings/Binding'),
                 meta: { title: 'account.settings.menuMap.binding', hidden: true, keepAlive: true, permission: ['user'] }
               },
               {
                 path: '/account/settings/notification',
                 name: 'NotificationSettings',
-                component: () => import('@/views/account/settings/Notification'),
+                component: () => import('@/views/example/account/settings/Notification'),
                 meta: {
                   title: 'account.settings.menuMap.notification',
                   hidden: true,
