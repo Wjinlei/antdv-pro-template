@@ -78,7 +78,7 @@ const asyncRouterMap = [
             path: '/dashboard/monitor',
             name: 'Monitor',
             hidden: true,
-            component: () => import('@/views/dashboard/Monitor'),
+            component: () => import('@/views/example/dashboard/Monitor'),
             meta: {title: '监控页', permission: ['dashboard']}
           },
           {
