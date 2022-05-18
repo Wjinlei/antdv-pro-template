@@ -10,9 +10,9 @@ const constantRouterComponents = {
   BlankLayout: BlankLayout,
   RouteView: RouteView,
   PageView: PageView,
-  '403': () => import(/* webpackChunkName: "error" */ '@/views/example/exception/403'),
-  '404': () => import(/* webpackChunkName: "error" */ '@/views/example/exception/404'),
-  '500': () => import(/* webpackChunkName: "error" */ '@/views/example/exception/500'),
+  403: () => import(/* webpackChunkName: "error" */ '@/views/example/exception/403'),
+  404: () => import(/* webpackChunkName: "error" */ '@/views/example/exception/404'),
+  500: () => import(/* webpackChunkName: "error" */ '@/views/example/exception/500'),
 
   // 你需要动态引入的页面组件
   Workplace: () => import('@/views/example/dashboard/Workplace'),
@@ -123,7 +123,8 @@ export const generator = (routerMap, parent) => {
       // 该路由对应页面的 组件 :方案1
       // component: constantRouterComponents[item.component || item.key],
       // 该路由对应页面的 组件 :方案2 (动态加载)
-      component: constantRouterComponents[item.component || item.key] || (() => import(`@/views/example/${item.component}`)),
+      component:
+        constantRouterComponents[item.component || item.key] || (() => import(`@/views/example/${item.component}`)),
 
       // meta: 页面标题, 菜单图标, 页面权限(供指令权限用，可去掉)
       meta: {
