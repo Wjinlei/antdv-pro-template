@@ -42,8 +42,8 @@ const errorHandler = error => {
   return Promise.reject(error)
 }
 
-// 逻辑状态码(code)拦截处理器
-const dataCodeHandler = data => {
+// 消息拦截处理器
+const messageHandler = data => {
   if (data.message && data.message !== '') {
     data.code === 0 ? message.success(data.message) : message.error(data.message)
   }
@@ -62,7 +62,7 @@ request.interceptors.request.use(config => {
 }, errorHandler)
 
 // response interceptor
-request.interceptors.response.use(response => dataCodeHandler(response.data), errorHandler)
+request.interceptors.response.use(response => messageHandler(response.data), errorHandler)
 
 const installer = {
   vm: {},
