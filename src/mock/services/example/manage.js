@@ -3,7 +3,7 @@ import { builder, getQueryParameters } from '../../util'
 
 const totalCount = 5701
 
-const serverList = (options) => {
+const serverList = options => {
   const parameters = getQueryParameters(options)
 
   const result = []
