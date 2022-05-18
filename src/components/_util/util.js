@@ -45,7 +45,11 @@ export const cutStrByFullLength = (str = '', maxLength) => {
   }, '')
 }
 
-// File download
+/**
+ * 文件下载, 根据blob保存为fileName
+ * @param {*} fileName
+ * @param {*} blob
+ */
 export function download(fileName, blob) {
   if ('download' in document.createElement('a')) {
     const link = document.createElement('a')
