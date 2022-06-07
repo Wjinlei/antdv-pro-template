@@ -49,9 +49,9 @@ const vueConfig = {
         GIT_HASH: JSON.stringify(getGitHash()),
         BUILD_DATE: buildDate
       })
-    ],
+    ]
     // if prod, add externals
-    externals: isProd ? assetsCDN.externals : {}
+    // externals: isProd ? assetsCDN.externals : {}
   },
 
   chainWebpack: config => {
@@ -76,12 +76,12 @@ const vueConfig = {
 
     // if prod is on
     // assets require on cdn
-    if (isProd) {
-      config.plugin('html').tap(args => {
-        args[0].cdn = assetsCDN
-        return args
-      })
-    }
+    // if (isProd) {
+    //   config.plugin('html').tap(args => {
+    //     args[0].cdn = assetsCDN
+    //     return args
+    //   })
+    // }
   },
 
   css: {
